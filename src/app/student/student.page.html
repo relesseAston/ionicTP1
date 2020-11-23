@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>student {{studentId}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let student of studentTab">
+    <ion-card-header>
+      <ion-card-title>Information de l'étudiant</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Je m'appelle {{student.name}}, je possède une moyenne de {{student.average}} et {{messageAlternance}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button (click)= "onClick()">home</ion-button>
+
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{pageTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div>
+      {{message}}
+    </div>
+
+    <ul *ngIf="rawHtml">
+      <li *ngFor="let student of students">
+        <span>{{student}}</span>
+        <button (click)="onClick()">Click</button>
+      </li>
+    </ul>
+    
+
+    <ion-list>
+      <ion-item *ngFor="let student of students">
+        <ion-checkbox (ionChange)="onChange(student.name)" [checked]="student.alternant"></ion-checkbox>
+        <ion-label>{{student.name}}</ion-label>
+        <ion-button slot="start" color="success" (click)= "onClick(student.id)">info</ion-button>
+        <ion-badge [color]="student.average > 14 ? 'success' : 'primary' ">{{student.average}}</ion-badge>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
